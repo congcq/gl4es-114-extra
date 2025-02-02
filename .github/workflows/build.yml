@@ -4,7 +4,7 @@ jobs:
   build-android:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
       - name: Build GL4ES
         run: |
          # wget https://dl.google.com/android/repository/android-ndk-r25c-linux.zip
@@ -24,7 +24,7 @@ jobs:
   build-ios:
     runs-on: macos-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
       - name: Build GL4ES
         run: |
           wget https://github.com/leetal/ios-cmake/raw/master/ios.toolchain.cmake
@@ -32,7 +32,7 @@ jobs:
             -DCMAKE_C_FLAGS=-Wno-error=implicit-function-declaration
           cmake --build build --config RelWithDebInfo --target GL
       - name: Upload lib
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v4
         with:
           name: gl4es-114-ios
           path: lib/Release
