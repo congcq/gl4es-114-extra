@@ -209,7 +209,7 @@ else()
     if(${CMAKE_SYSTEM_NAME} MATCHES "iOS")
         target_link_libraries(GL
             "-F../../external"
-            "-framework libGLESv2"
+            "-framework MetalANGLE"
         )
     endif()
     
